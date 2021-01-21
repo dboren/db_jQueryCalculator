@@ -9,10 +9,25 @@ var numberSeven = $("#button-7");
 var numberEight = $("#button-8");
 var numberNine = $("#button-9");
 
+var plus = $("#button-plus");
+var minus = $("#button-minus");
+var multiply = $("#button-multiply");
+var divide = $("#button-divide");
+var power = $("#button-power");
+
+var equals = $("#button-equal");
+var clear = $("#button-clear");
+
+var resultEl =$("#result");
 
 
 //Functions
 //Add event listner for all buttons within one event.
+
+
+$( "button" ).on( "click", function() {
+    console.log(this.value);
+})
 
 //Addition Function
 

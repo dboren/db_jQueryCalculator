@@ -79,8 +79,20 @@ $(document).ready(function() {
 
 // Your code here...
 
+var currentInput;
+
+$( "button" ).on( "click", function() {
+    console.log(this.value);
+    currentInput = this.value;
+    console.log("current input: " + currentInput);
+    var currentInputText = document.createTextNode("currentInput");
+    $("#result").textContent = currentInputText;
+})
+
 
 });
+
+
 
 </script>
 
