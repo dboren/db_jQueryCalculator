@@ -79,17 +79,46 @@ $(document).ready(function() {
 
 // Your code here...
 
-var currentInput;
+var currentInput = "";
+var num1, num2;
+
+var resultEl =$("#result");
+var sign;
 
 $( "button" ).on( "click", function() {
+    var value = this.value;
+
     console.log(this.value);
-    currentInput = this.value;
     console.log("current input: " + currentInput);
+
+    if (value == "plus") {
+        value = "+";
+    } else  if (value == "minus") {
+        value = "-";
+    } else  if (value == "divide") {
+        value = "/";
+    } else  if (value == "power") {
+        value = "^";
+    }else  if (value == "times") {
+        value = "*";
+    } else if (value == "equals") {
+      console.log(eval(currentInput)); 
+      resultEl.text(eval(currentInput));
+      return;
+
+    } else if (value == "clear") {
+      currentInput = "";
+      resultEl.text("");
+      value = "";
+      return;
+    }
+    currentInput += value;
+
     var currentInputText = document.createTextNode("currentInput");
-    $("#result").textContent = currentInputText;
+        //$("#result").textContent = currentInputText;
+    resultEl.text(currentInput);
+    
 })
-
-
 });
 
 
